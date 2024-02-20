@@ -1,0 +1,10 @@
+{
+    "python.analysis.extraPaths": [
+        "./in/QQ/task_py",
+        "./src/common",
+        "./src/task",
+        "./src/task/function", 
+        "./src/task/function/py",   
+        "./test/Test/src/test_1"     
+    ]
+}

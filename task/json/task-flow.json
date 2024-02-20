@@ -1,0 +1,209 @@
+{
+    "text": "实现whil loop  if else等",
+    "author": "John",
+    "id": "1",
+    "args": [
+        {
+            "name": "初始值",
+            "text": "初始值",
+            "type": "int",
+            "default": 10
+        }
+    ],
+    "tasks": [
+        {
+            "url": "/agerun/variable/number",
+            "args": [
+                {
+                    "name": "name",
+                    "value": "变量1"
+                },
+                {
+                    "name": "value",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "url": "/agerun/common/while",
+            "args": [
+                {
+                    "name": "condition",
+                    "express": {
+                        "name": "<=",
+                        "args": [
+                            {
+                                "name": "left",
+                                "express": {
+                                    "name": "var",
+                                    "value": "变量1"
+                                }
+                            },
+                            {
+                                "name": "right",
+                                "express": {
+                                    "name": "arg",
+                                    "value": "初始值"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "blocks": {
+                "action": [
+                    {
+                        "url": "/agerun/variable/number",
+                        "args": [
+                            {
+                                "name": "name",
+                                "value": "变量1"
+                            },
+                            {
+                                "name": "value",
+                                "express": {
+                                    "name": "+",
+                                    "args": [
+                                        {
+                                            "name": "left",
+                                            "express": {
+                                                "name": "var",
+                                                "value": "变量1"
+                                            }
+                                        },
+                                        {
+                                            "name": "right",
+                                            "value": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "express": {
+                                    "name": "var",
+                                    "value": "变量1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/agerun/common/if",
+            "args": [
+                {
+                    "name": "condition",
+                    "express": {
+                        "name": "==",
+                        "args": [
+                            {
+                                "name": "left",
+                                "express": {
+                                    "name": "var",
+                                    "value": "变量1"
+                                }
+                            },
+                            {
+                                "name": "right",
+                                "value": 10
+                            }
+                        ]
+                    }
+                }
+            ],
+            "blocks": {
+                "action": [
+                    {
+                        "url": "/agerun/variable/number",
+                        "args": [
+                            {
+                                "name": "name",
+                                "value": "变量1"
+                            },
+                            {
+                                "name": "value",
+                                "express": {
+                                    "name": "+",
+                                    "args": [
+                                        {
+                                            "name": "left",
+                                            "express": {
+                                                "name": "var",
+                                                "value": "变量1"
+                                            }
+                                        },
+                                        {
+                                            "name": "right",
+                                            "value": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "express": {
+                                    "name": "var",
+                                    "value": "变量1"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "elseAction": [
+                    {
+                        "url": "/agerun/variable/number",
+                        "args": [
+                            {
+                                "name": "name",
+                                "value": "变量1"
+                            },
+                            {
+                                "name": "value",
+                                "express": {
+                                    "name": "+",
+                                    "args": [
+                                        {
+                                            "name": "left",
+                                            "express": {
+                                                "name": "var",
+                                                "value": "变量1"
+                                            }
+                                        },
+                                        {
+                                            "name": "right",
+                                            "value": 10
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "express": {
+                                    "name": "var",
+                                    "value": "变量1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

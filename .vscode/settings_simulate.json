@@ -1,0 +1,8 @@
+{
+    "python.analysis.extraPaths": [
+        "./src/common",
+        "./src/task",
+        "./src/task/function", 
+        "./src/task/function/py_simulate",        
+    ]
+}

@@ -1,0 +1,80 @@
+[
+    {
+        "url": "/agerun/ui/mouse",
+        "title": "鼠标移到某位置",
+        "params": [
+            {
+                "name": "pos",
+                "type": "ui_pos",
+                "title": "鼠标位置",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/mouse_input",
+        "title": "鼠标移到某位置输入内容",
+        "description": "输入内容",
+        "params": [
+            {
+                "name": "pos",
+                "type": "ui_pos",
+                "title": "鼠标位置",
+                "required": true
+            },
+            {
+                "name": "content",
+                "type": "string",
+                "title": "输入内容",
+                "required": true,
+                "description": "输入内容"
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/mouse_input_enter",
+        "title": "鼠标移到某位置输入内容并回输",
+        "description": "输入内容",
+        "params": [
+            {
+                "name": "pos",
+                "type": "ui_pos",
+                "title": "鼠标位置",
+                "required": true
+            },
+            {
+                "name": "content",
+                "type": "string",
+                "title": "输入内容",
+                "required": true,
+                "description": "输入内容"
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/mouse_mousedown",
+        "title": "鼠标移到某位置点击",
+        "description": "输入内容",
+        "params": [
+            {
+                "name": "pos",
+                "type": "ui_pos",
+                "title": "鼠标位置",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/mouse_doubleclick",
+        "title": "鼠标移到某位置双击",
+        "description": "输入内容",
+        "params": [
+            {
+                "name": "pos",
+                "type": "ui_pos",
+                "title": "鼠标位置",
+                "required": true
+            }
+        ]
+    }
+]

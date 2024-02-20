@@ -1,0 +1,106 @@
+[
+    {
+        "url": "/agerun/ui/mouse",
+        "title": "鼠标移到某位置",
+        "params": [
+            {
+                "name": "pos",
+                "type": "ui_pos",
+                "text": "鼠标位置",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/mouse_input",
+        "title": "鼠标移到某位置输入内容",
+        "description": "输入内容",
+        "params": [
+            {
+                "name": "pos",
+                "type": "ui_pos",
+                "text": "鼠标位置",
+                "required": true
+            },
+            {
+                "name": "content",
+                "type": "string",
+                "text": "输入内容",
+                "required": true,
+                "description": "输入内容"
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/mouse_input_enter",
+        "title": "鼠标移到某位置输入内容并回输",
+        "description": "输入内容",
+        "params": [
+            {
+                "name": "pos",
+                "type": "ui_pos",
+                "text": "鼠标位置",
+                "required": true
+            },
+            {
+                "name": "content",
+                "type": "string",
+                "text": "输入内容",
+                "required": true,
+                "description": "输入内容"
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/mouse_mousedown",
+        "title": "鼠标移到某位置点击",
+        "description": "输入内容",
+        "params": [
+            {
+                "name": "pos",
+                "type": "ui_pos",
+                "text": "鼠标位置",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/mouse_doubleclick",
+        "title": "鼠标移到某位置双击",
+        "description": "输入内容",
+        "params": [
+            {
+                "name": "pos",
+                "type": "ui_pos",
+                "text": "鼠标位置",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/mouse_get_text",
+        "title": "鼠标移到某位置获取文本",
+        "description": "先将鼠标移到指定位置, 接着让机器人以当前鼠标位置为中心点, 向四周扩展到指定区域的矩形后, 开始对该区域进行文本识别",
+        "params": [
+            {
+                "name": "pos",
+                "type": "ui_pos",
+                "text": "鼠标位置",
+                "required": true
+            },
+            {
+                "name": "recognize_rect_region_size",
+                "type": "ui_size",
+                "text": "识别的矩形区域大小",
+                "required": false
+            },
+            {
+                "name": "name",
+                "type": "string",
+                "required": true,
+                "text": "mouseGetText",
+                "description": "函数返回值"
+            }
+        ]
+    }
+]

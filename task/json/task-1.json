@@ -1,0 +1,110 @@
+{
+    "text": "给某人发消息",
+    "author": "John",
+    "id": "1",
+    "args": [
+        {
+            "text": "联系人",
+            "name": "联系人",
+            "description": "联系人",
+            "required": true,
+            "type": "string",
+            "unit": true
+        },
+        {
+            "text": "消息",
+            "name": "消息",
+            "description": "消息内容",
+            "required": true,
+            "type": "string"
+        }
+    ],
+    "tasks": [
+        {
+            "id": "12",
+            "url": "/agerun/ui/mouse_input_enter",
+            "description": "鼠标移到加微信的位置输入内容并回车",
+            "args": [
+                {
+                    "text": "位置",
+                    "name": "pos",
+                    "value": {
+                        "x": 100,
+                        "y": 200
+                    }
+                },
+                {
+                    "name": "content",
+                    "express": {
+                        "name": "variable",
+                        "value": "联系人"
+                    }
+                }
+            ]
+        },
+        {
+            "url": "/agerun/common/wait",
+            "id": "123",
+            "description": "等待3秒钟",
+            "args": [
+                {
+                    "text": "等待时间",
+                    "name": "time",
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "url": "/agerun/ui/mouse_mousedown",
+            "id": "1234",
+            "description": "鼠标点击好友",
+            "args": [
+                {
+                    "text": "位置",
+                    "name": "pos",
+                    "value": {
+                        "x": 100,
+                        "y": 200
+                    }
+                }
+            ]
+        },
+        {
+            "url": "/agerun/ui/mouse_input_enter",
+            "id": "1234",
+            "description": "鼠标移到右侧的聊天窗口并输入内容回车",
+            "args": [
+                {
+                    "text": "位置",
+                    "name": "pos",
+                    "value": {
+                        "x": 100,
+                        "y": 200
+                    }
+                },
+                {
+                    "name": "content",
+                    "express": {
+                        "name": "+",
+                        "args": [
+                            {
+                                "name": "left",
+                                "express": {
+                                    "name": "const",
+                                    "value": "我将要发送的消息:"
+                                }
+                            },
+                            {
+                                "name": "right",
+                                "express": {
+                                    "name": "arg",
+                                    "value": "消息"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

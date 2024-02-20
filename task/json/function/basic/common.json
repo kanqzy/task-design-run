@@ -1,0 +1,133 @@
+[
+    {
+        "url": "/agerun/common/print",
+        "title": "打印",
+        "description": "打印日志",
+        "params": [
+            {
+                "name": "log",
+                "type": "string",
+                "required": true,
+                "text": "日志",
+                "description": "日志"
+            }
+        ]
+    },
+    {
+        "url": "/agerun/common/wait",
+        "title": "等待",
+        "description": "等待一段时间",
+        "params": [
+            {
+                "name": "time",
+                "type": "int",
+                "required": true,
+                "text": "等待时间",
+                "description": "等待时间，单位毫秒"
+            }
+        ]
+    },
+    {
+        "url": "/agerun/common/while",
+        "title": "循环",
+        "description": "循环执行一段代码",
+        "params": [
+            {
+                "name": "condition",
+                "type": "boolean",
+                "required": true,
+                "text": "循环条件",
+                "description": "循环条件，当条件为false时，循环结束"
+            },
+            {
+                "name": "action",
+                "type": "action",
+                "required": true,
+                "text": "循环代码",
+                "description": "循环代码，当条件为true时，执行该代码"
+            }
+        ]
+    },
+    {
+        "url": "/agerun/common/if",
+        "title": "如果条件满足",
+        "description": "循环执行一段代码",
+        "params": [
+            {
+                "name": "condition",
+                "type": "boolean",
+                "required": true,
+                "text": "如果条件为真",
+                "description": "如果条件为真则执行action，否则执行elseAction"
+            },
+            {
+                "name": "action",
+                "type": "action",
+                "required": true,
+                "text": "条件为真是执行",
+                "description": "条件为真是执行"
+            },
+            {
+                "name": "elseAction",
+                "type": "action",
+                "text": "条件为假时执行",
+                "description": "条件为假时执行"
+            }
+        ]
+    },
+    {
+        "url": "/agerun/variable/text",
+        "title": "变量",
+        "description": "申明一串文本变量",
+        "params": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": true,
+                "text": "变量名",
+                "description": "变量名"
+            },
+            {
+                "name": "value",
+                "type": "string",
+                "required": true,
+                "text": "变量值",
+                "description": "变量值"
+            }
+        ]
+    },
+    {
+        "url": "/agerun/variable/number",
+        "title": "变量",
+        "description": "申明一串数字变量",
+        "params": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": true,
+                "text": "变量名",
+                "description": "变量名"
+            },
+            {
+                "name": "value",
+                "type": "number",
+                "required": true,
+                "text": "变量值",
+                "description": "变量值"
+            }
+        ]
+    },
+    {
+        "url": "/agerun/common/flow",
+        "title": "调用其它任务",
+        "description": "传入任务文件名，传入参数调用它，这里的其它参数是不确定的，但实际会传入，其与参数结构与调用的任务文件保持一致",
+        "params": [
+            {
+                "name": "flow",
+                "type": "string",
+                "required": true,
+                "text": "任务名"
+            }
+        ]
+    }
+]

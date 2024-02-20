@@ -1,0 +1,287 @@
+{
+    "text": "显示while loop if else等的使用",
+    "author": "John",
+    "id": "3",
+    "args": [
+        {
+            "name": "初始值",
+            "text": "初始值",
+            "type": "int",
+            "default": 5
+        }
+    ],
+    "tasks": [
+        {
+            "id": "12",
+            "url": "/agerun/variable/number",
+            "args": [
+                {
+                    "name": "name",
+                    "value": "变量1"
+                },
+                {
+                    "name": "value",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "id": "13",
+            "url": "/agerun/variable/text",
+            "args": [
+                {
+                    "name": "name",
+                    "value": "mouseGetText"
+                },
+                {
+                    "name": "value",
+                    "value": ""
+                }
+            ]
+        },
+        {
+            "id": "14",
+            "url": "/agerun/ui/mouse_get_text",
+            "args": [
+                {
+                    "name": "pos",
+                    "value": [
+                        300,
+                        500
+                    ]
+                },
+                {
+                    "name": "recognize_rect_region_size",
+                    "value": [
+                        50,
+                        80
+                    ]
+                },
+                {
+                    "name": "name",
+                    "express": {
+                        "name": "var",
+                        "value": "mouseGetText"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "15_",
+            "url": "/agerun/common/print",
+            "args": [
+                {
+                    "name": "log",
+                    "express": {
+                        "name": "+",
+                        "args": [
+                            {
+                                "name": "left",
+                                "express": {
+                                    "name": "const",
+                                    "value": "mouseGetText: "
+                                }
+                            },
+                            {
+                                "name": "right",
+                                "express": {
+                                    "name": "var",
+                                    "value": "mouseGetText"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "15",
+            "url": "/agerun/common/while",
+            "args": [
+                {
+                    "name": "condition",
+                    "express": {
+                        "name": "<=",
+                        "args": [
+                            {
+                                "name": "left",
+                                "express": {
+                                    "name": "var",
+                                    "value": "变量1"
+                                }
+                            },
+                            {
+                                "name": "right",
+                                "express": {
+                                    "name": "arg",
+                                    "value": "初始值"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "blocks": {
+                "action": [
+                    {
+                        "id": "15_1",
+                        "url": "/agerun/variable/number",
+                        "args": [
+                            {
+                                "name": "name",
+                                "value": "变量1"
+                            },
+                            {
+                                "name": "value",
+                                "express": {
+                                    "name": "+",
+                                    "args": [
+                                        {
+                                            "name": "left",
+                                            "express": {
+                                                "name": "var",
+                                                "value": "变量1"
+                                            }
+                                        },
+                                        {
+                                            "name": "right",
+                                            "value": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "15_2",
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "express": {
+                                    "name": "var",
+                                    "value": "变量1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "16",
+            "url": "/agerun/common/if",
+            "args": [
+                {
+                    "name": "condition",
+                    "express": {
+                        "name": "==",
+                        "args": [
+                            {
+                                "name": "left",
+                                "express": {
+                                    "name": "var",
+                                    "value": "变量1"
+                                }
+                            },
+                            {
+                                "name": "right",
+                                "value": 10
+                            }
+                        ]
+                    }
+                }
+            ],
+            "blocks": {
+                "action": [
+                    {
+                        "id": "16_1_1",
+                        "url": "/agerun/variable/number",
+                        "args": [
+                            {
+                                "name": "name",
+                                "value": "变量1"
+                            },
+                            {
+                                "name": "value",
+                                "express": {
+                                    "name": "+",
+                                    "args": [
+                                        {
+                                            "name": "left",
+                                            "express": {
+                                                "name": "var",
+                                                "value": "变量1"
+                                            }
+                                        },
+                                        {
+                                            "name": "right",
+                                            "value": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "16_1_2",
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "express": {
+                                    "name": "var",
+                                    "value": "变量1"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "elseAction": [
+                    {
+                        "id": "16_2_1",
+                        "url": "/agerun/variable/number",
+                        "args": [
+                            {
+                                "name": "name",
+                                "value": "变量1"
+                            },
+                            {
+                                "name": "value",
+                                "express": {
+                                    "name": "+",
+                                    "args": [
+                                        {
+                                            "name": "left",
+                                            "express": {
+                                                "name": "var",
+                                                "value": "变量1"
+                                            }
+                                        },
+                                        {
+                                            "name": "right",
+                                            "value": 10
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "16_2_2",
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "express": {
+                                    "name": "var",
+                                    "value": "变量1"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

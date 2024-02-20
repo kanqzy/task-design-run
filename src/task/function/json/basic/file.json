@@ -1,0 +1,29 @@
+[
+    {
+        "url": "/agerun/file/saveJsonData",
+        "title": "保存json数据",
+        "description": "将json数据保存到一个json文件中",
+        "params": [
+            {
+                "name": "jsonObj",
+                "type": "object",
+                "required": true,
+                "text": "json数据",
+                "description": "json数据"
+            },
+            {
+                "name": "outPath",
+                "type": "string",
+                "required": true,
+                "text": "输出json数据路径",
+                "description": "输出json数据路径"
+            },
+            {
+                "name": "return",
+                "type": "bool",
+                "required": false,
+                "text": "返回结果"
+            }
+        ]
+    }
+]

@@ -1,0 +1,109 @@
+{
+    "text": "添加微信",
+    "author": "John",
+    "id": "1",
+    "args": [
+        {
+            "text": "联系人",
+            "name": "联系人",
+            "description": "联系人",
+            "required": true,
+            "type": "string",
+            "unit": true
+        }
+    ],
+    "tasks": [
+        {
+            "id": "12",
+            "url": "/agerun/ui/mouse_input_enter",
+            "description": "鼠标移到加微信的位置输入内容并回车",
+            "args": [
+                {
+                    "text": "位置",
+                    "name": "pos",
+                    "value": {
+                        "x": 100,
+                        "y": 200
+                    }
+                },
+                {
+                    "name": "content",
+                    "express": {
+                        "name": "arg",
+                        "value": "联系人"
+                    }
+                }
+            ]
+        },
+        {
+            "url": "/agerun/common/wait",
+            "id": "123",
+            "description": "等待3秒钟",
+            "args": [
+                {
+                    "text": "等待时间",
+                    "name": "time",
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "url": "/agerun/ui/mouse_mousedown",
+            "id": "1234",
+            "description": "鼠标移到加网络好友产点击",
+            "args": [
+                {
+                    "text": "位置",
+                    "name": "pos",
+                    "value": {
+                        "x": 100,
+                        "y": 200
+                    }
+                }
+            ]
+        },
+        {
+            "url": "/agerun/common/wait",
+            "id": "12ggg3",
+            "description": "等待10秒钟假设人加上了",
+            "args": [
+                {
+                    "text": "等待时间",
+                    "name": "time",
+                    "value": 600
+                }
+            ]
+        },
+        {
+            "url": "/agerun/common/flow",
+            "id": "egggg",
+            "description": "加上好友后，主动给对方发消息",
+            "args": [
+                {
+                    "name": "flow",
+                    "value": "task-1"
+                },
+                {
+                    "name": "联系人",
+                    "express": {
+                        "name": "arg",
+                        "value": "联系人"
+                    }
+                },
+                {
+                    "name": "消息",
+                    "value": "你好啊，我是xxx,加你有事，收到请回复"
+                }
+            ]
+        },
+        {
+            "url": "/agerun/common/print",
+            "args": [
+                {
+                    "name": "log",
+                    "value": "好友已加上，并发送了消息"
+                }
+            ]
+        }
+    ]
+}

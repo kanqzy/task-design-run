@@ -1,0 +1,99 @@
+[
+    {
+        "url": "/agerun/ui/keyInput/pressKey",
+        "title": "键盘按下指定的一个键",
+        "description": "可支持如 方向键('up','down','left','right')等的常用按键",
+        "params": [
+            {
+                "name": "key",
+                "type": "str",
+                "text": "按键",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/keyInput/pressHotKey",
+        "title": " 键盘按下指定的热键(如: `Enter`, `Esc`等)",
+        "params": [
+            {
+                "name": "hotKey",
+                "type": "str",
+                "text": "热键",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/keyInput/inputChineseChars",
+        "title": "输入中文字符",
+        "params": [
+            {
+                "name": "chineseChars",
+                "type": "str",
+                "text": "一串字符(全部为中文字符)",
+                "required": true
+            },
+            {
+                "name": "mouseReturnBack",
+                "type": "bool",
+                "text": "鼠标是否回到输入中文前的位置",
+                "required": false
+            },
+            {
+                "name": "return",
+                "type": "bool",
+                "text": "返回结果: 是否成功输入中文字符",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/keyInput/inputChineseCharsWithLetters",
+        "title": "输入中文字符(带有英文字母)",
+        "params": [
+            {
+                "name": "chineseChars",
+                "type": "str",
+                "text": "一串字符(带有英文字母)",
+                "required": true
+            },
+            {
+                "name": "mouseReturnBack",
+                "type": "bool",
+                "text": "鼠标是否回到输入中文前的位置",
+                "required": false
+            },
+            {
+                "name": "return",
+                "type": "bool",
+                "text": "返回结果: 是否成功输入中文字符(带有英文字母)",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/keyInput/switchToChineseInput",
+        "title": "切换到中文输入法",
+        "params": [            
+            {
+                "name": "return",
+                "type": "bool",
+                "text": "返回结果: 是否成功切换到中文输入法",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/ui/keyInput/switchToEngInput",
+        "title": "切换到英文输入法",
+        "params": [            
+            {
+                "name": "return",
+                "type": "bool",
+                "text": "返回结果: 是否成功切换到切换到英文输入法",
+                "required": true
+            }
+        ]
+    }
+]

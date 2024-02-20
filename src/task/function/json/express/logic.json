@@ -1,0 +1,80 @@
+[
+    {
+        "name": "&&",
+        "type": "operator",
+        "params": [
+            {
+                "name": "left",
+                "type": "boolean"
+            },
+            {
+                "name": "right",
+                "type": "boolean"
+            }
+        ],
+        "return": "boolean"
+    },
+    {
+        "name": "||",
+        "type": "operator",
+        "params": [
+            {
+                "name": "left",
+                "type": "boolean"
+            },
+            {
+                "name": "right",
+                "type": "boolean"
+            }
+        ],
+        "return": "boolean"
+    },
+    {
+        "name": ">",
+        "type": "operator",
+        "params": [
+            {
+                "name": "left",
+                "type": "number"
+            },
+            {
+                "name": "right",
+                "type": "number"
+            }
+        ],
+        "return": "boolean"
+    },
+    {
+        "name": "text.length",
+        "type": "operator",
+        "params": [
+            {
+                "name": "text",
+                "type": "string"
+            }
+        ],
+        "return": "number"
+    },
+    {
+        "name": "toString",
+        "type": "operator",
+        "params": [
+            {
+                "name": "obj",
+                "type": "object"
+            }
+        ],
+        "return": "string"
+    },
+    {
+        "name": "getKeyValue",
+        "type": "operator",
+        "params": [
+            {
+                "name": "obj",
+                "type": "object"
+            }
+        ],
+        "return": "object"
+    }
+]

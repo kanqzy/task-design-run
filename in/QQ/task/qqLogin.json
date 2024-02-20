@@ -1,0 +1,545 @@
+{
+    "text": "QQ登录",
+    "author": "张三",
+    "id": "QQ@qqLogin",
+    "args": [
+        {
+            "text": "QQ号",
+            "name": "qqNumber",
+            "description": "QQ号",
+            "required": true,
+            "type": "int"
+        }
+    ],
+    "tasks": [
+        {
+            "id": "t_1",
+            "url": "/agerun/variable/bool",
+            "description": "检测指定的QQ号是否已登录",
+            "args": [
+                {
+                    "name": "name",
+                    "value": "logined"
+                },
+                {
+                    "name": "value",
+                    "value": false
+                }
+            ]
+        },
+        {
+            "id": "t_2",
+            "url": "/agerun/app/qq/check_qq_logined",
+            "description": "检测指定的QQ号是否已登录",
+            "args": [
+                {
+                    "name": "qqNumber",
+                    "express": {
+                        "name": "arg",
+                        "value": "qqNumber"
+                    }
+                },
+                {
+                    "name": "return",
+                    "express": {
+                        "name": "var",
+                        "value": "logined"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "t_3",
+            "url": "/agerun/common/if",
+            "args": [
+                {
+                    "name": "condition",
+                    "express": {
+                        "name": "var",
+                        "value": "logined"
+                    }
+                }
+            ],
+            "blocks": {
+                "action": [
+                    {
+                        "id": "t_3_1",
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "express": {
+                                    "name": "+",
+                                    "args": [
+                                        {
+                                            "name": "const",
+                                            "value": "qqNumber `"
+                                        },
+                                        {
+                                            "name": "toString",
+                                            "express": {
+                                                "name": "arg",
+                                                "value": "qqNumber"
+                                            }
+                                        },
+                                        {
+                                            "name": "const",
+                                            "value": "` 已经登录了"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "t_3_2",
+                        "url": "/agerun/variable/text",
+                        "description": "声明变量 `formatNowTime`",
+                        "args": [
+                            {
+                                "name": "name",
+                                "value": "formatNowTime"
+                            },
+                            {
+                                "name": "value",
+                                "value": ""
+                            }
+                        ]
+                    },
+                    {
+                        "id": "t_3_3",
+                        "url": "/agerun/common/getFormatNowTime",
+                        "args": [
+                            {
+                                "name": "format",
+                                "value": "yyyy-MM-dd HH-mm-ss"
+                            },
+                            {
+                                "name": "return",
+                                "express": {
+                                    "name": "var",
+                                    "value": "formatNowTime"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "t_3_4",
+                        "url": "/agerun/common/capture_screen_region",
+                        "args": [
+                            {
+                                "name": "outPath",
+                                "express": {
+                                    "name": "+",
+                                    "args": [
+                                        {
+                                            "name": "const",
+                                            "value": "../out/QQ/qqLogin/"
+                                        },
+                                        {
+                                            "name": "var",
+                                            "value": "formatNowTime"
+                                        },
+                                        {
+                                            "name": "const",
+                                            "value": "/login_result.png"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "t_3_5",
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "value": "qqLogin task complete"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "t_3_6",
+                        "url": "/agerun/common/interrupt",
+                        "args": []
+                    }
+                ]
+            }
+        },
+        {
+            "id": "t_4",
+            "url": "/agerun/app/application/quickStartApp",
+            "description": "启动本地QQ应用程序(QQ.exe)",
+            "args": [
+                {
+                    "name": "shortcutName",
+                    "value": "腾讯QQ"
+                }
+            ]
+        },
+        {
+            "id": "t_5",
+            "url": "/agerun/variable/dict",
+            "args": [
+                {
+                    "name": "name",
+                    "value": "waittingResult"
+                },
+                {
+                    "name": "value",
+                    "value": {}
+                }
+            ]
+        },
+        {
+            "id": "t_6",
+            "url": "/agerun/app/qq/waittingForLoginAppear",
+            "description": "等待QQ登录窗口出现",
+            "args": [
+                {
+                    "name": "waittingTimeLimit",
+                    "value": 8
+                },
+                {
+                    "name": "return",
+                    "express": {
+                        "name": "var",
+                        "value": "waittingResult"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "t_7",
+            "url": "/agerun/common/if",
+            "args": [
+                {
+                    "name": "condition",
+                    "express": {
+                        "name": "!",
+                        "express": {
+                            "name": "getKeyValue",
+                            "args": [
+                                {
+                                    "name": "object",
+                                    "express": {
+                                        "name": "var",
+                                        "value": "waittingResult"
+                                    }
+                                },
+                                {
+                                    "name": "key",
+                                    "express": {
+                                        "name": "const",
+                                        "value": "appear"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ],
+            "blocks": {
+                "action": [
+                    {
+                        "id": "t_7_1",
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "value": "failed waitting for ContactHomeAppear in 8 seconds"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "t_7_2",
+                        "url": "/agerun/common/interrupt",
+                        "args": []
+                    }
+                ]
+            }
+        },
+        {
+            "id": "t_8",
+            "url": "/agerun/variable/array",
+            "args": [
+                {
+                    "name": "name",
+                    "value": "loginWinRect"
+                },
+                {
+                    "name": "value",
+                    "express": {
+                        "name": "getKeyValue",
+                        "args": [
+                            {
+                                "name": "object",
+                                "express": {
+                                    "name": "var",
+                                    "value": "waittingResult"
+                                }
+                            },
+                            {
+                                "name": "key",
+                                "express": {
+                                    "name": "const",
+                                    "value": "winRect"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "t_9",
+            "url": "/agerun/variable/bool",
+            "args": [
+                {
+                    "name": "name",
+                    "value": "select_input_result"
+                },
+                {
+                    "name": "value",
+                    "value": false
+                }
+            ]
+        },
+        {
+            "id": "t_10",
+            "url": "/agerun/app/qq/select_qq_number_input",
+            "args": [
+                {
+                    "name": "loginWinRect",
+                    "express": {
+                        "name": "var",
+                        "value": "loginWinRect"
+                    }
+                },
+                {
+                    "name": "qqNumber",
+                    "express": {
+                        "name": "arg",
+                        "value": "qqNumber"
+                    }
+                },
+                {
+                    "name": "return",
+                    "express": {
+                        "name": "var",
+                        "value": "select_input_result"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "t_11",
+            "url": "/agerun/common/if",
+            "args": [
+                {
+                    "name": "condition",
+                    "express": {
+                        "name": "!",
+                        "express": {
+                            "name": "var",
+                            "value": "select_input_result"
+                        }
+                    }
+                }
+            ],
+            "blocks": {
+                "action": [
+                    {
+                        "id": "t_11_1",
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "value": "select_input_result failed"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "t_11_2",
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "express": {
+                                    "name": "+",
+                                    "args": [
+                                        {
+                                            "name": "const",
+                                            "value": "qqNumber `"
+                                        },
+                                        {
+                                            "name": "toString",
+                                            "express": {
+                                                "name": "arg",
+                                                "value": "qqNumber"
+                                            }
+                                        },
+                                        {
+                                            "name": "const",
+                                            "value": "` is not supported, only support for [2413750622, 203299362, 1624803880]"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "t_11_3",
+                        "url": "/agerun/common/interrupt",
+                        "args": []
+                    }
+                ]
+            }
+        },
+        {
+            "id": "t_12",
+            "url": "/agerun/ui/mouse_mousedown",
+            "description": "鼠标移到\"登录\"按钮点击",
+            "args": [
+                {
+                    "name": "pos",
+                    "value": [
+                        965,
+                        731
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "t_13",
+            "url": "/agerun/app/qq/waittingForContactHomeAppear",
+            "args": [
+                {
+                    "name": "qqNumber",
+                    "express": {
+                        "name": "arg",
+                        "value": "qqNumber"
+                    }
+                },
+                {
+                    "name": "waittingTimeLimit",
+                    "value": 8
+                },
+                {
+                    "name": "return",
+                    "express": {
+                        "name": "var",
+                        "value": "waittingResult"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "t_14",
+            "url": "/agerun/common/if",
+            "args": [
+                {
+                    "name": "condition",
+                    "express": {
+                        "name": "getKeyValue",
+                        "args": [
+                            {
+                                "name": "var",
+                                "value": "waittingResult"
+                            },
+                            {
+                                "name": "const",
+                                "value": "appear"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "blocks": {
+                "action": [
+                    {
+                        "id": "t_14_1",
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "express": {
+                                    "name": "+",
+                                    "args": [
+                                        {
+                                            "name": "const",
+                                            "value": "qqNumber `"
+                                        },
+                                        {
+                                            "name": "toString",
+                                            "express": {
+                                                "name": "arg",
+                                                "value": "qqNumber"
+                                            }
+                                        },
+                                        {
+                                            "name": "const",
+                                            "value": "` 登录成功了"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "t_14_2",
+                        "url": "/agerun/common/capture_screen_region",
+                        "args": [
+                            {
+                                "name": "outPath",
+                                "value": "../out/QQ/qqLogin/login_result.png"
+                            }
+                        ]
+                    }
+                ],
+                "elseAction": [
+                    {
+                        "id": "t_14_3",
+                        "url": "/agerun/common/print",
+                        "args": [
+                            {
+                                "name": "log",
+                                "express": {
+                                    "name": "+",
+                                    "args": [
+                                        {
+                                            "name": "const",
+                                            "value": "qqNumber `"
+                                        },
+                                        {
+                                            "name": "toString",
+                                            "express": {
+                                                "name": "arg",
+                                                "value": "qqNumber"
+                                            }
+                                        },
+                                        {
+                                            "name": "const",
+                                            "value": "` 登录失败了"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "t_15",
+            "url": "/agerun/common/print",
+            "args": [
+                {
+                    "name": "log",
+                    "value": "qqLogin task complete"
+                }
+            ]
+        }
+    ]
+}

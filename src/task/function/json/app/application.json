@@ -1,0 +1,50 @@
+[
+    {
+        "url": "/agerun/app/application/quickStartApp",
+        "title": "按 `Win` 键在搜索框输入应用程序快捷方式名称, 然后按 `Enter` 键启动应用程序",
+        "params": [
+            {
+                "name": "shortcutName",
+                "type": "string",
+                "text": "应用程序快捷方式名称",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/app/application/activateWindow",
+        "title": "根据给定的窗口信息, 激活该窗口",
+        "params": [
+            {
+                "name": "winInfo",
+                "type": "dict",
+                "text": "窗口信息",
+                "required": true
+            },
+            {
+                "name": "return",
+                "type": "bool",
+                "text": "返回结果: 是否成功激活该窗口",
+                "required": true
+            }
+        ]
+    },
+    {
+        "url": "/agerun/app/application/exitApp",
+        "title": "根据可执行文件名称, 退出windows系统对应的App应用程序",
+        "params": [
+            {
+                "name": "exeName",
+                "type": "string",
+                "text": "可执行文件名称(.exe)",
+                "required": true
+            },
+            {
+                "name": "return",
+                "type": "int",
+                "text": "返回结果: 成功退出的app进程",
+                "required": false
+            }
+        ]
+    }
+]
